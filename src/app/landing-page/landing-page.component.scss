@@ -1,0 +1,38 @@
+.logo {
+  // width: 8rem;
+  // height: 2rem;
+}
+
+.navbar-item .logo {
+  max-height: 2rem;
+}
+.title {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.title .landing-caption {
+  font-size: 4rem;
+}
+
+.title-divider {
+  border: none;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  width: 200px;
+  margin: 10px 0;
+}
+
+.container.needs-content {
+  min-height: 300px;
+  padding: 50px 0;
+}
+
+.list-column-header {
+  font-weight: bold;
+}
+
+.footer .content ul {
+  list-style: none;
+  margin-left: 0;
+}
