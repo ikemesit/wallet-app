@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginPageComponent
+  },
   {
     path: '',
     component: LandingPageComponent
@@ -13,7 +17,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      enableTracing: true
+    })
   ],
   exports: [RouterModule]
 })

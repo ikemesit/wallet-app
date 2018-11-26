@@ -3,6 +3,14 @@
   // height: 2rem;
 }
 
+.is-topnav-link {
+  // border-bottom: 2px solid transparent;
+
+  // &:hover {
+  //   border-bottom: 2px solid #fff;
+  // }
+}
+
 .navbar-item .logo {
   max-height: 2rem;
 }
@@ -35,4 +43,28 @@
 .footer .content ul {
   list-style: none;
   margin-left: 0;
+}
+
+.primary-benefits {
+  background-color: rgb(11, 30, 127);
+  padding: 50px 0;
+
+  h4, i, p {
+    color: #fff;
+  }
+
+  i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+}
+
+.landing-pic {
+  position: absolute;
+  top: -92px;
+}
+
+.section-header {
+  // font-family: 'Nunito', sans-serif;
+  margin-bottom: 20px;
 }
