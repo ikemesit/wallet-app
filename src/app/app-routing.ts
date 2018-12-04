@@ -6,12 +6,16 @@ import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: LandingPageComponent
+  },
+  {
     path: 'login',
     component: LoginPageComponent
   },
   {
-    path: '',
-    component: LandingPageComponent
+    path: 'wallet',
+    loadChildren: './wallet/wallet.module#WalletModule'
   }
 ];
 

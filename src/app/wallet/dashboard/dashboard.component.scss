@@ -1,0 +1,52 @@
+.dashboard {
+  &__container {
+    padding: 20px;
+  }
+
+  &__context-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  &__context-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .button {
+      margin-right: 10px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 200px;
+    grid-gap: 5px;
+    height: 500px;
+
+    &-area {
+      border: thin solid #eee;
+      background-color: #778DA9;
+      padding: 20px;
+
+      h4 {
+        color: #fff;
+      }
+
+      p {
+        font-size: 2.2rem;
+        color: #fff;
+      }
+    }
+  }
+}

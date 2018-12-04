@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <div class="header">
+    <div class="header__sidebar-btn">
+      <i class="fas fa-align-left"></i>
+    </div>
+    <div class="header__user-profile">
+      <i class="fas fa-user-circle profile-pic"></i>
+      <p>Princewill Mba</p>
+      <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+            <!-- <span>Click me</span> -->
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              Overview
+            </a>
+            <a href="#" class="dropdown-item">
+              Settings
+            </a>
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item">
+              Sign Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar__header">
+      <img class="logo" src="../../assets/images/funpay-logo.png" alt="Logo">
+      <!-- <i class="fas fa-bars"></i> -->
+    </div>
+    <nav class="sidebar__nav">
+      <button class="sidebar__nav-link">
+        <i class="fas fa-tachometer-alt"></i>
+        <p>Dashboard</p>
+      </button>
+      <button class="sidebar__nav-link">
+        <i class="fas fa-exchange-alt"></i>
+        <p>Transactions</p>
+      </button>
+      <button class="sidebar__nav-link">
+        <i class="fas fa-money-bill-wave"></i>
+        <p>My Funds</p>
+      </button>
+      <button class="sidebar__nav-link">
+        <i class="far fa-bell"></i>
+        <p>Notifications</p>
+      </button>
+      <button class="sidebar__nav-link">
+        <i class="fas fa-plus-circle"></i>
+        <p>Add Ons</p>
+      </button>
+      <button class="sidebar__nav-link">
+        <i class="far fa-question-circle"></i>
+        <p>Support</p>
+      </button>
+    </nav>
+  </div>
+  <div class="content">
+      <router-outlet></router-outlet>
+  </div>
+</div>
