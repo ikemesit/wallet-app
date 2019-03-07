@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="btn_wrap">
+        <button class="btn btn-lg btn-primary" (click)="getposts()">Get Posts</button>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let post of posts">
+          {{ post.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

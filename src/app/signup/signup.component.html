@@ -20,35 +20,42 @@
               </div>
   
               <div class="form_content">
-                <form method="post">
+                <form (ngSubmit) = "onSubmit(sf)" #sf="ngForm">
                   <div class="form_itm">
-                    <input type="text" name="first_name" class="textfield" placeholder="First Name">
+                    <input type="text" name="firstname" class="textfield" placeholder="First Name" ngModel required #firstname="ngModel">
+                    <p class="help-block" *ngIf="!firstname.valid && firstname.touched">Please enter your first name</p>
                   </div>
   
                   <div class="form_itm">
-                    <input type="text" name="last_name" class="textfield" placeholder="Last Name">
+                    <input type="text" name="lastname" class="textfield" placeholder="Last Name" ngModel required #lastname="ngModel">
+                    <p class="help-block" *ngIf="!lastname.valid && lastname.touched">Please enter your last name</p>
                   </div>
   
                   <div class="form_itm">
-                    <input type="email" name="email" class="textfield" placeholder="Email">
+                    <input type="email" name="email" class="textfield" placeholder="Email" ngModel email required #email="ngModel">
+                    <p class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</p>
                   </div>
   
                   <div class="form_itm">
-                    <input type="password" name="password" class="textfield" placeholder="Password">
+                    <input type="password" name="password" class="textfield" placeholder="Password" ngModel required #password="ngModel">
+                    <p class="help-block" *ngIf="!password.valid && password.touched">Please enter your password</p>
                   </div>
   
                   <div class="form_itm">
-                    <input type="password" name="confirm_password" class="textfield" placeholder="Confirm Password">
+                    <input type="password" name="confirm_password" class="textfield" placeholder="Confirm Password" 
+                    ngModel required #cpassword="ngModel">
+                    <p class="help-block" *ngIf="!cpassword.valid && cpassword.touched">Please confirm password</p>
                   </div>
   
                   <div class="form_itm">
-                    <select name="country" class="selection">
+                    <select name="country" class="selection" ngModel>
                       <option value="">Select Country</option>
+                      <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
                     </select>
                   </div>
   
                   <div class="form_itm">
-                    <button type="submit" class="form_btn">Sign Up</button>
+                    <button type="submit" class="form_btn" [disabled]="!sf.valid">Sign Up</button>
                   </div>
                 </form>
               </div>

@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
       $(this).toggleClass('active');
 	    $('#overlay').toggleClass('open');
     });
+
   }
 
 }

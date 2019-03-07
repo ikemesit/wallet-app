@@ -20,18 +20,20 @@
               </div>
   
               <div class="form_content">
-                <form method="post">
+                <form (ngSubmit)="onLogin(lf)" #lf="ngForm">
                   
                   <div class="form_itm">
-                    <input type="email" name="email" class="textfield" placeholder="Email">
+                    <input type="email" name="email" class="textfield" placeholder="Email" ngModel required email #email="ngModel">
+                    <p class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</p>
                   </div>
   
                   <div class="form_itm">
-                    <input type="password" name="password" class="textfield" placeholder="Password">
+                    <input type="password" name="password" class="textfield" placeholder="Password" ngModel required #password="ngModel">
+                    <p class="help-block" *ngIf="!password.valid && password.touched">Please enter password</p>
                   </div>
   
                   <div class="form_itm">
-                    <button type="submit" class="form_btn">Login</button>
+                    <button type="submit" class="form_btn" [disabled]="!lf.valid">Login</button>
                   </div>
                 </form>
               </div>
