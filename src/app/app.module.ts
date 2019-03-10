@@ -1,29 +1,24 @@
+// Angular Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFirestore } from '@angular/fire/firestore';
 
-import { environment } from '../environments/environment';
+// Modules
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from '@app/shared/shared.module';
+import { AccountModule } from '@app/modules/account/account.module';
+
+// Components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { FooterComponent } from './footer/footer.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { AltfooterComponent } from './altfooter/altfooter.component';
-import { AuthskinComponent } from './authskin/authskin.component';
-import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
-import { PostsComponent } from './posts/posts.component'
-import { PostsService } from './services/posts.service';
+import { HeaderComponent } from './components/header/header.component';
+import { AltfooterComponent } from './components/altfooter/altfooter.component';
+import { FooterComponent } from './components/footer/footer.component';
 
-import { AuthService } from './services/auth.service';
-import { AuthGuard } from './auth.guard';
+// Pages
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -34,23 +29,16 @@ import { AuthGuard } from './auth.guard';
     SignupComponent,
     FooterComponent,
     AltfooterComponent,
-    AuthskinComponent,
-    PostsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule,
-    UserDashboardModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule
+    CoreModule,
+    SharedModule,
+    AccountModule,
   ],
-  providers: [
-    AuthService, PostsService, AngularFirestore, AuthGuard
-  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
