@@ -53,6 +53,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['dashboard']);
+    console.log(this.signUpForm.getRawValue());
+    // this.router.navigate(['dashboard']);
   }
 }

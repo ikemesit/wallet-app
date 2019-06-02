@@ -43,6 +43,7 @@
                     name="email"
                     class="textfield"
                     placeholder="Email"
+                    [formControl]="email"
                     email
                     required>
                   <p class="help-block"
@@ -53,10 +54,25 @@
                 </div>
 
                 <div class="form_itm">
+                  <input type="text"
+                    name="phone"
+                    class="textfield"
+                    placeholder="Phone Number"
+                    [formControl]="phone"
+                    required>
+                  <p class="help-block"
+                    *ngIf="!phone.valid &&
+                      phone.touched">
+                    Please enter a valid Phone number
+                  </p>
+                </div>
+
+                <div class="form_itm">
                   <input type="password"
                     name="password"
                     class="textfield"
                     placeholder="Password"
+                    [formControl]="password"
                     required>
                   <p class="help-block"
                     *ngIf="!password.valid && password.touched">
@@ -68,7 +84,9 @@
                   <input type="password"
                     name="confirm_password"
                     class="textfield"
-                    placeholder="Confirm Password">
+                    placeholder="Confirm Password"
+                    [formControl]="cpassword"
+                    required>
                   <p class="help-block"
                     *ngIf="!cpassword.valid &&
                       cpassword.touched">
@@ -87,8 +105,7 @@
 
                 <div class="form_itm">
                   <button type="submit"
-                    class="form_btn"
-                    [disabled]="!signUpForm.valid">Sign Up</button>
+                    class="form_btn">Sign Up</button>
                 </div>
               </form>
             </div>
