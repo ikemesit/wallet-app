@@ -44,12 +44,14 @@ export class SignupComponent implements OnInit {
     this.user.phone = sf.value.phone;
     this.user.country = sf.value.country;
     //console.log(this.user);
+    
     this.auth.signup(
       this.user.email, 
       this.user.password, 
       this.user.firstname, 
       this.user.lastname, 
-      this.user.country);
+      this.user.country
+    );
 
     this.router.navigate(['dashboard']);
   }
